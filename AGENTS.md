@@ -249,7 +249,7 @@ type PortfolioContent = {
 
 ## 9. Implementation approach
 
-1. **Audit before coding:** Read existing instructions, inspect app structure, routes, assets, lint/build scripts, existing colors and fonts, and current layouts. Check that the appropriate `dev` branch exists.
+1. **Audit before coding:** Read existing instructions, inspect app structure, routes, assets, existing colors and fonts, and current layouts. Check that the appropriate `dev` branch exists.
 2. **Plan changes around the design system:** identify reusable primitives such as `Container`, `SectionHeading`, `Reveal`, `MediaFrame`, `ProjectTile`, `SiteHeader`, `SiteFooter`, and `ContactOrbit`.
 3. **Establish typography, tokens, and grid** before styling individual pages. The first milestone is a visibly stronger composition — not color swaps.
 4. **Build mobile-first** and refine tablet / desktop layouts deliberately.
@@ -281,7 +281,6 @@ type PortfolioContent = {
 - Prefer CSS to runtime-heavy animation for small interactions.
 - Limit font weights and avoid oversized animation libraries or redundant packages.
 - Verify link destinations, dark/light contrast if applicable, keyboard navigation, and no browser-console or runtime errors.
-- Run the project's **actual** lint and production-build commands before **every commit**, and TypeScript/type-check if configured. Do not report checks as passed without running them.
 - After any design iteration inspect actual rendered pages in desktop and mobile view, preferably with screenshots and a visual comparison against these art-direction goals.
 
 ## 12. Git, review, and Vercel workflow
@@ -291,7 +290,7 @@ Repository: `https://github.com/sanukhandev/rehan-portfolio`
 - **Development baseline:** `dev`. Verify the branch is present and current before working; if absent, report the blocker rather than inventing repository state.
 - Work on a descriptive feature branch from `dev` unless explicitly instructed otherwise.
 - Do not push directly to `main`; **never merge a pull request**.
-- Run lint and build checks before creating a commit, even when modifications seem small. Record which commands ran and their outputs.
+
 - When changes are ready for review, open a **pull request targeting `main`** per project policy. Do not auto-merge it.
 - Use Vercel's existing automatic deployment workflow. On site changes, provide the **verified actual preview-deployment URL** after it exists; never guess the URL or represent a commit/PR page as a deployed preview.
 - Document outstanding content placeholders and design decisions in the PR description.
@@ -311,14 +310,13 @@ A design pass is ready for review only when all of the following are true:
 - [ ] Pending content is modeled cleanly and shown as clearly labeled placeholders or omitted.
 - [ ] No invented projects, biographies, awards, metrics, logos, or dead links are visible.
 - [ ] Layouts work across small phones, tablets, laptops, and wide desktop screens.
-- [ ] Lint and production build checks pass **before commit** (or blockers are reported; no commit if checks fail).
 - [ ] If implementation changes were requested: PR targets `main`, remains **unmerged**, and a verified Vercel preview link is supplied when available.
 
 ## 14. Default agent response for future design work
 
 Before implementation, report briefly: (a) current layout issues, (b) concrete layout changes planned, (c) components/routes affected, and (d) how existing content and assets will be preserved.
 
-After implementation, report: changed files and user-visible improvements, mobile and desktop checks, lint/build results, any remaining placeholder slots, PR URL (when created), and verified Vercel preview URL (when available). Never claim to have inspected, tested, built, committed, deployed, or merged something without actual evidence.
+After implementation, report: changed files and user-visible improvements, mobile and desktop checks, any remaining placeholder slots, PR URL (when created), and verified Vercel preview URL (when available). Never claim to have inspected, tested, built, committed, deployed, or merged something without actual evidence.
 
 ---
 
